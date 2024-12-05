@@ -20,7 +20,10 @@ services:
     # localhost를 통한 통신이 아닌 container 간 통신을 사용하기 때문에 nginx.conf에서 php:9000번 포트로 변경
     # (php docker images에서 expose 9000이 dafault 이기 때문에)
 
-  # mysql:
+  mysql:
+    image: mysql:5.7
+    env_file:
+      - ./env/mysql.env
   # composer:
   # artisan:
   # npm:
